@@ -28,6 +28,8 @@ router.post("/add", upload.single("profile"), addTeacher);
 
 router.get("/update/:id", getTeacher);
 
+router.get("/get/:id", getTeacher);
+
 router.post("/update/:id", upload.single("profile"), updateTeacher);
 
 router.post("/delete", deleteTeacher);
