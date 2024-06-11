@@ -103,11 +103,6 @@ const getEvent = async (req, res, next) => {
     .catch((error) => {
       res.status(400).send(error.message);
     });
-
-  //   res.render("updateTeacher", {
-  //     title: "Update Teacher",
-  //     teacher: teacher_data,
-  //   });
 };
 
 const updateEvent = async (req, res, next) => {

@@ -12,12 +12,6 @@ const {
 
 // Multer 설정
 const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
-
-/* GET home page. */
-// router.get("/", function (req, res, next) {
-//   res.render("index", { title: "Teachers" });
-// });
 
 router.post("/add", addEvent);
 

@@ -86,17 +86,17 @@ const getAllTeachers = async (req, res, next) => {
 };
 
 const getTeacher = async (req, res, next) => {
-  const teacherId = req.params.id;
-  console.log("teacherId : ", teacherId);
+  const id = req.body.id;
+  console.log("id : ", id);
   await firestore
     .collection("TEACHERS")
-    .doc(teacherId)
+    .doc(id)
     .get()
     .then((doc) => {
       if (!doc.exists) {
         res.status(404).send("No User Record found");
       } else {
-        const teacher_data = new Teacher(
+        const data = new Teacher(
           doc.id,
           doc.data().createdAt,
           doc.data().category,
@@ -107,25 +107,20 @@ const getTeacher = async (req, res, next) => {
           doc.data().profile
         );
 
-        res.send(teacher_data);
+        res.send(data);
       }
     })
     .catch((error) => {
       res.status(400).send(error.message);
     });
-
-  //   res.render("updateTeacher", {
-  //     title: "Update Teacher",
-  //     teacher: teacher_data,
-  //   });
 };
 
 const updateTeacher = async (req, res, next) => {
-  const teacherId = req.params.id;
-  console.log("teacherId : ", teacherId);
-  const teacher = await firestore
+  const id = req.body.id;
+  console.log("id : ", id);
+  const data = await firestore
     .collection("TEACHERS")
-    .doc(teacherId)
+    .doc(id)
     .update(req.body)
     .then(() => {
       res.send("success");
@@ -138,12 +133,9 @@ const updateTeacher = async (req, res, next) => {
 const deleteTeacher = async (req, res, next) => {
   console.log("req.body : ", req.body);
   try {
-    const teacherId = req.body.id;
-    console.log("teacherId : ", teacherId);
-    const teacher = await firestore
-      .collection("TEACHERS")
-      .doc(teacherId)
-      .delete();
+    const id = req.body.id;
+    console.log("id : ", id);
+    const data = await firestore.collection("TEACHERS").doc(id).delete();
     res.send("success");
   } catch (error) {
     res.status(400).send(error.message);
