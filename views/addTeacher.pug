@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title 강사 정보 입력
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script.
+      function previewProfilePic(event) {
+        const input = event.target;
+        const preview = document.getElementById('profilePreview');
+        const reader = new FileReader();
+        
+        reader.onload = function() {
+          preview.src = reader.result;
+          preview.style.display = 'block';
+        }
+
+        if (input.files && input.files[0]) {
+          reader.readAsDataURL(input.files[0]);
+        } else {
+          preview.src = '';
+          preview.style.display = 'none';
+        }
+      }
+  body
+    h1 강사 정보 입력
+    form(action="/teachers/add" method="POST" enctype="multipart/form-data")
+      // 이름 입력 필드
+      div
+        label(for="name") 이름 :
+        input(type="text" id="name" name="name" required)
+      // 카테고리 선택 필드
+      div
+        label(for="category") 카테고리 :
+        select(id="category" name="category" required)
+          option(value="") 선택하세요
+          option(value="Vocal") Vocal
+          option(value="Dance") Dance
+      // 경력 입력 필드
+      div
+        label(for="career") 경력 :
+        textarea(id="career" name="career" )
+      // 프로필 사진 업로드 필드
+      div
+        label(for="profile") 프로필 사진 :
+        input(type="file" id="profile" name="profile" accept="image/png, image/jpeg, image/jpg" required onchange="previewProfilePic(event)")
+        img#profilePreview(style="display:none; width: 100px; height: auto")
+      // 제출 버튼
+      div
+        button(type="submit") 제출

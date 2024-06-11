@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  head
+    script(src="/js/teacher-script.js")
+  body 
+    div(style="gap: 10px; display: flex; flex-direction: column;")
+      h1= title
+      h2= id
+      a(href=image) #{image}
+      button#goToPage 목록으로 
+
