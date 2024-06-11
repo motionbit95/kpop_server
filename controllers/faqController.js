@@ -16,6 +16,32 @@ const addFAQ = async (req, res, next) => {
   }
 };
 
+const getFAQ = async (req, res, next) => {
+  const id = req.body.id;
+  console.log("id : ", id);
+  await firestore
+    .collection("FAQ")
+    .doc(id)
+    .get()
+    .then((doc) => {
+      if (!doc.exists) {
+        res.status(404).send("이벤트 문서를 찾을 수 없습니다.");
+      } else {
+        const data = new FAQ(
+          doc.id,
+          doc.data().createdAt,
+          doc.data().question,
+          doc.data().answer
+        );
+
+        res.send(data);
+      }
+    })
+    .catch((error) => {
+      res.status(400).send(error.message);
+    });
+};
+
 const getAllFAQ = async (req, res, next) => {
   try {
     const snapshot = await firestore.collection("FAQ").get();
@@ -70,6 +96,7 @@ const deleteFAQ = async (req, res, next) => {
 
 module.exports = {
   addFAQ,
+  getFAQ,
   getAllFAQ,
   updateFAQ,
   deleteFAQ,

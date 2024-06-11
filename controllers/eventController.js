@@ -13,11 +13,11 @@ const addEvent = async (req, res, next) => {
       const data = req.body;
 
       data.createdAt = new Date();
-      data.thumbnail = "";
 
       const event = await firestore.collection("EVENTS").add(data);
 
       res.send({ ...data, id: event.id });
+      return;
     }
 
     const blob = bucket.file(req.file.originalname);

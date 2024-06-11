@@ -15,11 +15,11 @@ const addTeacher = async (req, res, next) => {
       data.createdAt = new Date();
       data.rating = 0;
       data.student = 0;
-      data.profile = "";
 
       const teacher = await firestore.collection("TEACHERS").add(data);
 
       res.send({ ...data, id: teacher.id });
+      return;
     }
 
     const blob = bucket.file(req.file.originalname);
