@@ -10,6 +10,7 @@ var teacherRouter = require("./routes/teacher-routes");
 var faqRouter = require("./routes/faq-routes");
 var eventRouter = require("./routes/event-routes");
 var curriculumRouter = require("./routes/curriculum-routes");
+var inquiryRouter = require("./routes/inquiry-routes");
 
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -37,6 +38,7 @@ app.use("/teachers", teacherRouter);
 app.use("/faq", faqRouter);
 app.use("/event", eventRouter);
 app.use("/curriculums", curriculumRouter);
+app.use("/inquiry", inquiryRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

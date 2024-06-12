@@ -39,10 +39,11 @@ async function deleteAllCollections() {
 
 async function addDummyData(req, res) {
   try {
-    await addDummyEvent();
-    await addDummyTeacher();
-    await addDummyFAQ();
-    await addDummyCurriculum();
+    // await addDummyEvent();
+    // await addDummyTeacher();
+    // await addDummyFAQ();
+    // await addDummyCurriculum();
+    await addDummyInquiry();
     res.send("dummy data added successfully.");
   } catch (error) {
     console.error("Error adding dummy data: ", error);
@@ -601,6 +602,62 @@ async function addDummyCurriculum() {
       .collection("CURRICULUMS")
       .doc(dummyCurriculum.id)
       .set(dummyCurriculum);
+  }
+}
+
+async function addDummyInquiry() {
+  let now = new Date();
+  const dummyInquiries = [
+    {
+      id: "vPfoGGRJGzKzK7M3R42A",
+      uid: "kpopschool",
+      createdAt: now,
+      tag: "refund/payment",
+      title: "Duplicate payment",
+      date:
+        String(now.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(now.getDate()).padStart(2, "0") +
+        "-" +
+        now.getFullYear(),
+      state: "waiting for",
+      details: `Dear Kpopschool,
+I am writing to bring to your attention an issue regarding a duplicate payment. It appears that my account has been charged twice for the same transaction.
+
+Could you please investigate this matter and initiate a refund for the duplicate charge at your earliest convenience? I have attached the relevant transaction details for your reference.
+
+Thank you for your prompt attention to this matter.
+
+Best regards,
+Jhon Doe`,
+    },
+    {
+      id: "wFgmvGwAMegowItnOCUO",
+      uid: "kpopschool",
+      createdAt: now,
+      tag: "ETC",
+      title: "find deleted post",
+      date:
+        String(now.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(now.getDate()).padStart(2, "0") +
+        "-" +
+        now.getFullYear(),
+      state: "waiting for",
+      details: `Dear Kpopschool,
+
+I am writing to request assistance in locating a deleted post from my account. I accidentally deleted a post that is important to me and would like to recover it if possible.
+
+Could you please help me restore the deleted post? I would greatly appreciate any assistance you can provide in retrieving it.
+
+Thank you for your time and help.
+
+Best regards,
+Jhon Doe`,
+    },
+  ];
+  for (const dummyInquiry of dummyInquiries) {
+    await db.collection("INQUIRY").doc(dummyInquiry.id).set(dummyInquiry);
   }
 }
 
