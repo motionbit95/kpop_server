@@ -39,10 +39,10 @@ async function deleteAllCollections() {
 
 async function addDummyData(req, res) {
   try {
-    // await addDummyEvent();
-    // await addDummyTeacher();
-    // await addDummyFAQ();
-    // await addDummyCurriculum();
+    await addDummyEvent();
+    await addDummyTeacher();
+    await addDummyFAQ();
+    await addDummyCurriculum();
     await addDummyInquiry();
     res.send("dummy data added successfully.");
   } catch (error) {
