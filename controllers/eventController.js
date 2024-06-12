@@ -62,6 +62,7 @@ const getAllEvents = async (req, res, next) => {
       snapshot.forEach((doc) => {
         const data = new Event(
           doc.id,
+          doc.data().index,
           doc.data().createdAt,
           doc.data().thumbnail,
           doc.data().title,
@@ -91,6 +92,7 @@ const getEvent = async (req, res, next) => {
       } else {
         const data = new Event(
           doc.id,
+          doc.data().index,
           doc.data().createdAt,
           doc.data().thumbnail,
           doc.data().title,

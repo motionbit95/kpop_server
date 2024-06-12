@@ -42,6 +42,7 @@ async function addDummyData(req, res) {
     await addDummyEvent();
     await addDummyTeacher();
     await addDummyFAQ();
+    await addDummyCurriculum();
     res.send("dummy data added successfully.");
   } catch (error) {
     console.error("Error adding dummy data: ", error);
@@ -52,6 +53,7 @@ async function addDummyData(req, res) {
 async function addDummyEvent() {
   const dummyEvents = [
     {
+      id: "5pQQCrzgegvVs3SxrPyv",
       index: 0,
       title: "BIG OPENING SALE",
       description:
@@ -61,6 +63,7 @@ async function addDummyEvent() {
       createdAt: new Date(),
     },
     {
+      id: "Yl9NlVh2JAdG5dZtekif",
       index: 1,
       title: "SPECIAL PROMOTION",
       description:
@@ -70,6 +73,7 @@ async function addDummyEvent() {
       createdAt: new Date(),
     },
     {
+      id: "fGoDaD51M3AHIetLeEF9",
       index: 2,
       title: "BLACK FIRDAY",
       description:
@@ -79,6 +83,7 @@ async function addDummyEvent() {
       createdAt: new Date(),
     },
     {
+      id: "j3KmtBCNRpU8M2GQzFKl",
       index: 3,
       title: "60% SUPER SALE",
       description:
@@ -90,13 +95,14 @@ async function addDummyEvent() {
   ];
 
   for (const dummyEvent of dummyEvents) {
-    await db.collection("EVENTS").add(dummyEvent);
+    await db.collection("EVENTS").doc(dummyEvent.id).set(dummyEvent);
   }
 }
 
 async function addDummyTeacher() {
   const dummyTeachers = [
     {
+      id: "8AX7vOo2C8iplkaW9qtd",
       name: "Lee Hwan Ho",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile1.png?alt=media&token=fd5abbc8-38ae-4067-a5e3-0bc136b1755c",
@@ -110,6 +116,7 @@ async function addDummyTeacher() {
       student: 3560,
     },
     {
+      id: "hEua7uM1iEBq91VwRVuh",
       name: "Jessie",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile2.png?alt=media&token=7ef93bbb-024c-4c43-a383-a9c187840c3e",
@@ -124,6 +131,7 @@ async function addDummyTeacher() {
       student: 3560,
     },
     {
+      id: "8gRk9dJBTtw7we5IneEe",
       name: "Hyemi Park",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile3.png?alt=media&token=2d874079-37e9-472f-97cb-520dba7d9276",
@@ -135,6 +143,7 @@ async function addDummyTeacher() {
       student: 3560,
     },
     {
+      id: "FKeWq2ZhQ523hbtHhqSp",
       name: "ZEN",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile4.png?alt=media&token=f72d4aab-81cf-4821-8869-bfdc4af93863",
@@ -147,6 +156,7 @@ async function addDummyTeacher() {
       student: 3560,
     },
     {
+      id: "QNF5bHaLysMdQb2VMKJs",
       name: "Rose",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile5.png?alt=media&token=f34348e9-7c98-40da-840e-95320007fcad",
@@ -161,13 +171,14 @@ async function addDummyTeacher() {
   ];
 
   for (const dummyTeacher of dummyTeachers) {
-    await db.collection("TEACHERS").add(dummyTeacher);
+    await db.collection("TEACHERS").doc(dummyTeacher.id).set(dummyTeacher);
   }
 }
 
 async function addDummyFAQ() {
   const dummyFAQs = [
     {
+      id: "BBzx28RBnXGJmN7DNK3n",
       index: 0,
       createdAt: new Date(),
       question: "How do I pay?",
@@ -175,6 +186,7 @@ async function addDummyFAQ() {
         "You can pay using various methods such as credit card, debit card, PayPal, or bank transfer. Simply follow the instructions at checkout to complete your payment securely.",
     },
     {
+      id: "FD55j1C8tthUW9NH6M1O",
       index: 1,
       createdAt: new Date(),
       question: "Video playback error",
@@ -182,6 +194,7 @@ async function addDummyFAQ() {
         "If you're experiencing a video playback error, try refreshing the page or clearing your browser's cache. If the problem persists, check your internet connection or try using a different browser. For further assistance, please contact our support team.",
     },
     {
+      id: "JvdDEt4Lf9WLCXx5E8cW",
       index: 2,
       createdAt: new Date(),
       question: "AI playback error",
@@ -189,6 +202,7 @@ async function addDummyFAQ() {
         "If you're encountering an AI playback error, please ensure that your device meets the minimum system requirements and that your software is up-to-date. Restart the application and try again. If the issue continues, contact our technical support for help.",
     },
     {
+      id: "M1YPRXRa1mU2WK5ygzUx",
       index: 3,
       createdAt: new Date(),
       question:
@@ -197,6 +211,7 @@ async function addDummyFAQ() {
         "If the loading screen lasts more than 1 minute during payment, please do not refresh the page. Wait a few more moments, and if the issue persists, check your internet connection. If necessary, restart your browser and try the payment process again. If the problem continues, contact our customer service for assistance.",
     },
     {
+      id: "NctGrkZnhEuciH5tpJVy",
       index: 4,
       createdAt: new Date(),
       question: "Changing lesson course",
@@ -204,6 +219,7 @@ async function addDummyFAQ() {
         "To change your lesson course, please log into your account and navigate to the 'My Courses' section. From there, select the course you wish to change and follow the instructions provided. If you need additional help, contact our support team.",
     },
     {
+      id: "mYm3LaOzMByO6WELFFTm",
       index: 5,
       createdAt: new Date(),
       question: "Class refund information",
@@ -212,7 +228,379 @@ async function addDummyFAQ() {
     },
   ];
   for (const dummyFAQ of dummyFAQs) {
-    await db.collection("FAQ").add(dummyFAQ);
+    await db.collection("FAQ").doc(dummyFAQ.id).set(dummyFAQ);
+  }
+}
+
+async function addDummyCurriculum() {
+  const dummyCurriculums = [
+    {
+      id: "03t4MxT2ErsO1c3OEWXJ",
+      title: "Basic Vocal",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
+      createdAt: new Date(),
+      teacherId: "8AX7vOo2C8iplkaW9qtd",
+      category: "Vocal",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "80",
+      description:
+        "There's a saying that goes in half. Learn basic vocalizations and breathing techniques to sing. Basic vocalizations are learned to correct inaccurate pronunciations and increase the volume when on stage, and breathing techniques are learned to communicate emotions while singing or breathe properly. Master your assignment and get ready for the next step.",
+      difficulty: "Beginner",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "2be2cLY8FFSXFyijHS7q",
+      title: "Vocal Pitch",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
+      createdAt: new Date(),
+      teacherId: "8AX7vOo2C8iplkaW9qtd",
+      category: "Vocal",
+      format: "1:1",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "85",
+      description:
+        "If the foundation work for singing is completed, the next step is to draw out the right pitch for the song. Each singer analyzes his or her different ranges, finds a range that suits him or her, and selects and practices the right song.",
+      difficulty: "Intermediate",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "f8byokTqzpPcCAhXPoOR",
+      title: "Emotional song",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
+      createdAt: new Date(),
+      teacherId: "8AX7vOo2C8iplkaW9qtd",
+      category: "Vocal",
+      format: "VOD",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "90",
+      description:
+        "Try to capture your emotions in the song. The song makes people emotional, and it requires your effort. Learn breathing techniques and techniques to move people's minds. Enrich your assignment songs with many skills such as vibrations, stopping breathing, and singing high notes.",
+      difficulty: "Advanced",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "5tzp5WjRAgI7EBBhhbA8",
+      title: "Debut or Die",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
+      createdAt: new Date(),
+      teacherId: "8AX7vOo2C8iplkaW9qtd",
+      category: "Vocal",
+      format: "1:1",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "99",
+      description:
+        "The moment of destiny has come. The curriculum teaches students to think that you are on the verge of debuting. It teaches them tips on basic manners at auditions as well as how to sing, such as skills, techniques, and attitudes toward music.",
+      difficulty: "Professional",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "9g5ofRWDP319qyaWXJtp",
+      title: "Vocal Pitch",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
+      createdAt: new Date(),
+      teacherId: "hEua7uM1iEBq91VwRVuh",
+      category: "Vocal",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "80",
+      description:
+        "There's a saying that goes in half. Learn basic vocalizations and breathing techniques to sing. Basic vocalizations are learned to correct inaccurate pronunciations and increase the volume when on stage, and breathing techniques are learned to communicate emotions while singing or breathe properly. Master your assignment and get ready for the next step.",
+      difficulty: "Beginner",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "FJlLZ2k0mYmVOluvqsVQ",
+      title: "Technical skill",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
+      createdAt: new Date(),
+      teacherId: "hEua7uM1iEBq91VwRVuh",
+      category: "Vocal",
+      format: "1:1",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "85",
+      description:
+        "If the foundation work for singing is completed, the next step is to draw out the right pitch for the song. Each singer analyzes his or her different ranges, finds a range that suits him or her, and selects and practices the right song.",
+      difficulty: "Intermediate",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "G1qrc9SOrNyyuYDS4iMA",
+      title: "Intergrated singing",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
+      createdAt: new Date(),
+      teacherId: "hEua7uM1iEBq91VwRVuh",
+      category: "Vocal",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "80",
+      description:
+        "Try to capture your emotions in the song. The song makes people emotional, and it requires your effort. Learn breathing techniques and techniques to move people's minds. Enrich your assignment songs with many skills such as vibrations, stopping breathing, and singing high notes.",
+      difficulty: "Advanced",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "CVBC8oJrRndidxmAnBfp",
+      title: "Catching Movements",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "8gRk9dJBTtw7we5IneEe",
+      category: "Dance",
+      format: "1:1",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: 85,
+      description:
+        "If the foundation work for singing is completed, the next step is to draw out the right pitch for the song. Each singer analyzes his or her different ranges, finds a range that suits him or her, and selects and practices the right song.",
+      difficulty: "Intermediate",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "fxkBxqg1rr5wyuLCN02k",
+      title: "Group Dance",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "8gRk9dJBTtw7we5IneEe",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: 90,
+      description:
+        "Try to capture your emotions in the song. The song makes people emotional, and it requires your effort. Learn breathing techniques and techniques to move people's minds. Enrich your assignment songs with many skills such as vibrations, stopping breathing, and singing high notes.",
+      difficulty: "Advanced",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "i6gzkYDOhGqWhdnzIhgp",
+      title: "Choreography",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "8gRk9dJBTtw7we5IneEe",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: 99,
+      description:
+        "The moment of destiny has come. The curriculum teaches students to think that you are on the verge of debuting. It teaches them tips on basic manners at auditions as well as how to sing, such as skills, techniques, and attitudes toward music.",
+      difficulty: "Professional",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "iKHLfKSCiWTFz7nJIr0a",
+      title: "Challenge",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "FKeWq2ZhQ523hbtHhqSp",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "80",
+      description:
+        "There's a saying that goes in half. Learn basic vocalizations and breathing techniques to sing. Basic vocalizations are learned to correct inaccurate pronunciations and increase the volume when on stage, and breathing techniques are learned to communicate emotions while singing or breathe properly. Master your assignment and get ready for the next step.",
+      difficulty: "Beginner",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "vkQjRjBm1qa8vyLZ95fB",
+      title: "Shorts Analysis",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "FKeWq2ZhQ523hbtHhqSp",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "85",
+      description:
+        "If the foundation work for singing is completed, the next step is to draw out the right pitch for the song. Each singer analyzes his or her different ranges, finds a range that suits him or her, and selects and practices the right song.",
+      difficulty: "Intermediate",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "wdlJ7NQJcV9wJuoihSaa",
+      title: "Group Dance",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "FKeWq2ZhQ523hbtHhqSp",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "90",
+      description:
+        "Try to capture your emotions in the song. The song makes people emotional, and it requires your effort. Learn breathing techniques and techniques to move people's minds. Enrich your assignment songs with many skills such as vibrations, stopping breathing, and singing high notes.",
+      difficulty: "Advanced",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "zenTYk73llpKtujPizpL",
+      title: "Choreography",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "FKeWq2ZhQ523hbtHhqSp",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "99",
+      description:
+        "The moment of destiny has come. The curriculum teaches students to think that you are on the verge of debuting. It teaches them tips on basic manners at auditions as well as how to sing, such as skills, techniques, and attitudes toward music.",
+      difficulty: "Professional",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "IAsgKYQo27yljfJH8knV",
+      title: "Challenge",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "QNF5bHaLysMdQb2VMKJs",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "80",
+      description:
+        "There's a saying that goes in half. Learn basic vocalizations and breathing techniques to sing. Basic vocalizations are learned to correct inaccurate pronunciations and increase the volume when on stage, and breathing techniques are learned to communicate emotions while singing or breathe properly. Master your assignment and get ready for the next step.",
+      difficulty: "Beginner",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "IdAcpwrya7OGZpzsm6dc",
+      title: "Shorts Analysis",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "QNF5bHaLysMdQb2VMKJs",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "85",
+      description:
+        "If the foundation work for singing is completed, the next step is to draw out the right pitch for the song. Each singer analyzes his or her different ranges, finds a range that suits him or her, and selects and practices the right song.",
+      difficulty: "Intermediate",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "IpJjqgU2ZHJa9dX06LK1",
+      title: "Gesture Study",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "QNF5bHaLysMdQb2VMKJs",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "90",
+      description:
+        "Try to capture your emotions in the song. The song makes people emotional, and it requires your effort. Learn breathing techniques and techniques to move people's minds. Enrich your assignment songs with many skills such as vibrations, stopping breathing, and singing high notes.",
+      difficulty: "Advanced",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+    {
+      id: "w3Lc3ugDydKGaBWe1LoU",
+      title: "DETAILS",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
+      createdAt: new Date(),
+      teacherId: "QNF5bHaLysMdQb2VMKJs",
+      category: "Dance",
+      format: "1:6",
+      month: "3",
+      totalSessions: "12",
+      sessions: "2",
+      price: "99",
+      description:
+        "The moment of destiny has come. The curriculum teaches students to think that you are on the verge of debuting. It teaches them tips on basic manners at auditions as well as how to sing, such as skills, techniques, and attitudes toward music.",
+      difficulty: "Professional",
+      likes: "532",
+      review: "15",
+      student: "3560",
+    },
+  ];
+
+  for (const dummyCurriculum of dummyCurriculums) {
+    await db
+      .collection("CURRICULUMS")
+      .doc(dummyCurriculum.id)
+      .set(dummyCurriculum);
   }
 }
 

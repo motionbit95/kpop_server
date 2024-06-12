@@ -29,6 +29,7 @@ const getFAQ = async (req, res, next) => {
       } else {
         const data = new FAQ(
           doc.id,
+          doc.data().index,
           doc.data().createdAt,
           doc.data().question,
           doc.data().answer
@@ -53,6 +54,7 @@ const getAllFAQ = async (req, res, next) => {
       snapshot.forEach((doc) => {
         const faq_data = new FAQ(
           doc.id,
+          doc.data().index,
           doc.data().createdAt,
           doc.data().question,
           doc.data().answer

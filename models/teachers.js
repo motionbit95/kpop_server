@@ -1,11 +1,22 @@
 class Teacher {
-  constructor(id, createdAt, category, name, career, rating, student, profile) {
+  constructor(
+    id,
+    createdAt,
+    category,
+    name,
+    career,
+    rating,
+    review,
+    student,
+    profile
+  ) {
     this.id = id;
     this.category = category;
     this.createdAt = createdAt;
     this.name = name;
     this.career = career;
     this.rating = rating;
+    this.review = review;
     this.student = student;
     this.profile = profile;
   }

@@ -1,6 +1,7 @@
 class FAQ {
-  constructor(id, createdAt, question, answer) {
+  constructor(id, index, createdAt, question, answer) {
     this.id = id;
+    this.index = index;
     this.createdAt = createdAt;
     this.question = question;
     this.answer = answer;

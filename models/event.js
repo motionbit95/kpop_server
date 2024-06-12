@@ -1,6 +1,7 @@
 class Event {
-  constructor(id, createdAt, thumbnail, title, description) {
+  constructor(id, index, createdAt, thumbnail, title, description) {
     this.id = id;
+    this.index = index;
     this.createdAt = createdAt;
     this.thumbnail = thumbnail;
     this.title = title;

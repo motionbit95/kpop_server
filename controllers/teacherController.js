@@ -71,6 +71,7 @@ const getAllTeachers = async (req, res, next) => {
           doc.data().name,
           doc.data().career,
           doc.data().rating,
+          doc.data().review,
           doc.data().student,
           doc.data().profile
         );
@@ -103,6 +104,7 @@ const getTeacher = async (req, res, next) => {
           doc.data().name,
           doc.data().career,
           doc.data().rating,
+          doc.data().review,
           doc.data().student,
           doc.data().profile
         );
