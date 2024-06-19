@@ -4,6 +4,11 @@ const {
   deleteAuth,
   sendEmail,
   checkVerify,
+  getAllUsers,
+  getUser,
+  addUser,
+  updateUser,
+  deleteUser,
 } = require("../controllers/userController");
 const router = express.Router();
 const multer = require("multer");
@@ -21,14 +26,14 @@ router.post("/sendEmail", sendEmail);
 
 router.post("/checkVerify", checkVerify);
 
-// router.post("/add", upload.single("profile"), addTeacher);
+router.post("/add", addUser);
 
-// router.get("/list", getAllTeachers);
+router.get("/list", getAllUsers);
 
-// router.post("/get", getTeacher);
+router.post("/get", getUser);
 
-// router.post("/update", upload.single("profile"), updateTeacher);
+router.post("/update", updateUser);
 
-// router.post("/delete", deleteTeacher);
+router.post("/delete", deleteUser);
 
 module.exports = router;

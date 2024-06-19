@@ -2,23 +2,25 @@ class User {
   constructor(
     id,
     createdAt,
-    category,
+    isTeacher,
+    profile,
     name,
-    career,
-    rating,
-    review,
-    student,
-    profile
+    firstName,
+    email,
+    snsType,
+    snsId,
+    location
   ) {
     this.id = id;
-    this.category = category;
     this.createdAt = createdAt;
-    this.name = name;
-    this.career = career;
-    this.rating = rating;
-    this.review = review;
-    this.student = student;
+    this.isTeacher = isTeacher;
     this.profile = profile;
+    this.name = name;
+    this.firstName = firstName;
+    this.email = email;
+    this.snsType = snsType;
+    this.snsId = snsId;
+    this.location = location;
   }
 }
 

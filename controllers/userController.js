@@ -159,8 +159,6 @@ const addUser = async (req, res, next) => {
       const data = req.body;
 
       data.createdAt = new Date();
-      data.rating = 0;
-      data.student = 0;
 
       const user = await firestore.collection(collectionName).add(data);
 
@@ -186,8 +184,6 @@ const addUser = async (req, res, next) => {
       const data = req.body;
 
       data.createdAt = new Date();
-      data.rating = 0;
-      data.student = 0;
       data.profile = publicUrl;
 
       const user = await firestore.collection(collectionName).add(data);
@@ -213,13 +209,14 @@ const getAllUsers = async (req, res, next) => {
         const user_data = new User(
           doc.id,
           doc.data().createdAt,
-          doc.data().category,
+          doc.data().isTeacher,
+          doc.data().profile,
           doc.data().name,
-          doc.data().career,
-          doc.data().rating,
-          doc.data().review,
-          doc.data().student,
-          doc.data().profile
+          doc.data().firstName,
+          doc.data().email,
+          doc.data().snsType,
+          doc.data().snsId,
+          doc.data().location
         );
         usersArray.push(user_data);
       });
@@ -236,7 +233,7 @@ const getUser = async (req, res, next) => {
   const id = req.body.id;
   console.log("id : ", id);
   await firestore
-    .collection("userS")
+    .collection(collectionName)
     .doc(id)
     .get()
     .then((doc) => {
@@ -246,13 +243,14 @@ const getUser = async (req, res, next) => {
         const data = new User(
           doc.id,
           doc.data().createdAt,
-          doc.data().category,
+          doc.data().isTeacher,
+          doc.data().profile,
           doc.data().name,
-          doc.data().career,
-          doc.data().rating,
-          doc.data().review,
-          doc.data().student,
-          doc.data().profile
+          doc.data().firstName,
+          doc.data().email,
+          doc.data().snsType,
+          doc.data().snsId,
+          doc.data().location
         );
 
         res.send(data);
@@ -267,7 +265,7 @@ const updateUser = async (req, res, next) => {
   const id = req.body.id;
   console.log("id : ", id);
   const data = await firestore
-    .collection("userS")
+    .collection(collectionName)
     .doc(id)
     .update(req.body)
     .then(() => {

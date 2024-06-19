@@ -44,6 +44,7 @@ async function addDummyData(req, res) {
     await addDummyFAQ();
     await addDummyCurriculum();
     await addDummyInquiry();
+    await addDummyUser();
     res.send("dummy data added successfully.");
   } catch (error) {
     console.error("Error adding dummy data: ", error);
@@ -103,7 +104,7 @@ async function addDummyEvent() {
 async function addDummyTeacher() {
   const dummyTeachers = [
     {
-      id: "8AX7vOo2C8iplkaW9qtd",
+      id: "JudyymsDt9Y1wUS5gdwiYA2vvuP2",
       name: "Lee Hwan Ho",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile1.png?alt=media&token=fd5abbc8-38ae-4067-a5e3-0bc136b1755c",
@@ -117,7 +118,7 @@ async function addDummyTeacher() {
       student: 3560,
     },
     {
-      id: "hEua7uM1iEBq91VwRVuh",
+      id: "ARsT5Xayo7VBb3sZqHde9snKm9s1",
       name: "Jessie",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile2.png?alt=media&token=7ef93bbb-024c-4c43-a383-a9c187840c3e",
@@ -132,7 +133,7 @@ async function addDummyTeacher() {
       student: 3560,
     },
     {
-      id: "8gRk9dJBTtw7we5IneEe",
+      id: "39XYlrd170gcru4DMoUjvErlHj02",
       name: "Hyemi Park",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile3.png?alt=media&token=2d874079-37e9-472f-97cb-520dba7d9276",
@@ -144,7 +145,7 @@ async function addDummyTeacher() {
       student: 3560,
     },
     {
-      id: "FKeWq2ZhQ523hbtHhqSp",
+      id: "D3MGR5mp7pPslFPzvC94ZSJdC1w2",
       name: "ZEN",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile4.png?alt=media&token=f72d4aab-81cf-4821-8869-bfdc4af93863",
@@ -157,8 +158,8 @@ async function addDummyTeacher() {
       student: 3560,
     },
     {
-      id: "QNF5bHaLysMdQb2VMKJs",
-      name: "Rose",
+      id: "pnhDMRiYy0RKzb9rz8PIM449nBE2",
+      name: "ROSE",
       profile:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile5.png?alt=media&token=f34348e9-7c98-40da-840e-95320007fcad",
       category: "Dance",
@@ -241,7 +242,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
       createdAt: new Date(),
-      teacherId: "8AX7vOo2C8iplkaW9qtd",
+      teacherId: "JudyymsDt9Y1wUS5gdwiYA2vvuP2",
       category: "Vocal",
       format: "1:6",
       month: "3",
@@ -261,7 +262,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
       createdAt: new Date(),
-      teacherId: "8AX7vOo2C8iplkaW9qtd",
+      teacherId: "JudyymsDt9Y1wUS5gdwiYA2vvuP2",
       category: "Vocal",
       format: "1:1",
       month: "3",
@@ -281,7 +282,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
       createdAt: new Date(),
-      teacherId: "8AX7vOo2C8iplkaW9qtd",
+      teacherId: "JudyymsDt9Y1wUS5gdwiYA2vvuP2",
       category: "Vocal",
       format: "VOD",
       month: "3",
@@ -301,7 +302,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
       createdAt: new Date(),
-      teacherId: "8AX7vOo2C8iplkaW9qtd",
+      teacherId: "JudyymsDt9Y1wUS5gdwiYA2vvuP2",
       category: "Vocal",
       format: "1:1",
       month: "3",
@@ -321,7 +322,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
       createdAt: new Date(),
-      teacherId: "hEua7uM1iEBq91VwRVuh",
+      teacherId: "ARsT5Xayo7VBb3sZqHde9snKm9s1",
       category: "Vocal",
       format: "1:6",
       month: "3",
@@ -341,7 +342,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
       createdAt: new Date(),
-      teacherId: "hEua7uM1iEBq91VwRVuh",
+      teacherId: "ARsT5Xayo7VBb3sZqHde9snKm9s1",
       category: "Vocal",
       format: "1:1",
       month: "3",
@@ -361,7 +362,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum1.png?alt=media&token=4e326c75-381e-42a9-aed9-b449f2938148",
       createdAt: new Date(),
-      teacherId: "hEua7uM1iEBq91VwRVuh",
+      teacherId: "ARsT5Xayo7VBb3sZqHde9snKm9s1",
       category: "Vocal",
       format: "1:6",
       month: "3",
@@ -381,7 +382,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "8gRk9dJBTtw7we5IneEe",
+      teacherId: "39XYlrd170gcru4DMoUjvErlHj02",
       category: "Dance",
       format: "1:1",
       month: "3",
@@ -401,7 +402,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "8gRk9dJBTtw7we5IneEe",
+      teacherId: "39XYlrd170gcru4DMoUjvErlHj02",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -421,7 +422,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "8gRk9dJBTtw7we5IneEe",
+      teacherId: "39XYlrd170gcru4DMoUjvErlHj02",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -441,7 +442,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "FKeWq2ZhQ523hbtHhqSp",
+      teacherId: "D3MGR5mp7pPslFPzvC94ZSJdC1w2",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -461,7 +462,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "FKeWq2ZhQ523hbtHhqSp",
+      teacherId: "D3MGR5mp7pPslFPzvC94ZSJdC1w2",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -481,7 +482,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "FKeWq2ZhQ523hbtHhqSp",
+      teacherId: "D3MGR5mp7pPslFPzvC94ZSJdC1w2",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -501,7 +502,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "FKeWq2ZhQ523hbtHhqSp",
+      teacherId: "D3MGR5mp7pPslFPzvC94ZSJdC1w2",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -521,7 +522,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "QNF5bHaLysMdQb2VMKJs",
+      teacherId: "pnhDMRiYy0RKzb9rz8PIM449nBE2",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -541,7 +542,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "QNF5bHaLysMdQb2VMKJs",
+      teacherId: "pnhDMRiYy0RKzb9rz8PIM449nBE2",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -561,7 +562,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "QNF5bHaLysMdQb2VMKJs",
+      teacherId: "pnhDMRiYy0RKzb9rz8PIM449nBE2",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -581,7 +582,7 @@ async function addDummyCurriculum() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/curriculum2.png?alt=media&token=4461f570-06bd-4593-add3-b0de66233af7",
       createdAt: new Date(),
-      teacherId: "QNF5bHaLysMdQb2VMKJs",
+      teacherId: "pnhDMRiYy0RKzb9rz8PIM449nBE2",
       category: "Dance",
       format: "1:6",
       month: "3",
@@ -658,6 +659,145 @@ Jhon Doe`,
   ];
   for (const dummyInquiry of dummyInquiries) {
     await db.collection("INQUIRY").doc(dummyInquiry.id).set(dummyInquiry);
+  }
+}
+
+async function addDummyUser() {
+  const dummyUsers = [
+    {
+      id: "zbLuCDf1OxRZTd8nKdO90J2LGd32",
+      createdAt: new Date("2024-05-07"),
+      isTeacher: false,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/user1.png?alt=media&token=b9e86688-f4b3-425e-9440-2e129229b949",
+      name: "donatella",
+      firstName: "",
+      email: "nuTelllla@gmail.com",
+      snsType: "instagram",
+      snsId: "natellllla",
+      location: "Tokyo, Japan",
+    },
+    {
+      id: "39XYlrd170gcru4DMoUjvErlHj02",
+      createdAt: new Date("2024-04-07"),
+      isTeacher: true,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile3.png?alt=media&token=2d874079-37e9-472f-97cb-520dba7d9276",
+      name: "Hyemi",
+      firstName: "Park",
+      email: "hmp3456@naver.com",
+      snsType: "x",
+      snsId: "hyemipark_t",
+      location: "Seoul, South Korea",
+    },
+    {
+      id: "ARsT5Xayo7VBb3sZqHde9snKm9s1",
+      createdAt: new Date("2024-04-07"),
+      isTeacher: true,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile2.png?alt=media&token=7ef93bbb-024c-4c43-a383-a9c187840c3e",
+      name: "Jessie",
+      firstName: "",
+      email: "dolphine@naver.com",
+      snsType: "instagram",
+      snsId: "jecvs2",
+      location: "San Francisco, USA",
+    },
+    {
+      id: "5OTFfnNrricdMhHtpNtDr5TmXo03",
+      createdAt: new Date("2024-04-07"),
+      isTeacher: false,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile2.png?alt=media&token=7ef93bbb-024c-4c43-a383-a9c187840c3e",
+      name: "fiatto",
+      firstName: "",
+      email: "aktdlTek@gmail.com",
+      snsType: "instagram",
+      snsId: "_attto_",
+      location: "New York, USA",
+    },
+    {
+      id: "D8pthMpqPZeHldcU8dCSOWOPsc73",
+      createdAt: new Date("2024-04-07"),
+      isTeacher: false,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile2.png?alt=media&token=7ef93bbb-024c-4c43-a383-a9c187840c3e",
+      name: "swaggger",
+      firstName: "",
+      email: "aktdlTek@gmail.com",
+      snsType: "x",
+      snsId: "boogie_09",
+      location: "New York, USA",
+    },
+    {
+      id: "D3MGR5mp7pPslFPzvC94ZSJdC1w2",
+      createdAt: new Date("2024-03-07"),
+      isTeacher: true,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile4.png?alt=media&token=f72d4aab-81cf-4821-8869-bfdc4af93863",
+      name: "ZEN",
+      firstName: "",
+      email: "zeniset@gmail.com",
+      snsType: "instagram",
+      snsId: "ze2n_20",
+      location: "London, UK",
+    },
+    {
+      id: "tNN4Fgzlb7gRWAExM4Vx3tt4Ed83",
+      createdAt: new Date("2024-02-07"),
+      isTeacher: false,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile4.png?alt=media&token=f72d4aab-81cf-4821-8869-bfdc4af93863",
+      name: "JAMEY",
+      firstName: "",
+      email: "dumiyam@gmail.com",
+      snsType: "x",
+      snsId: "jjj*145",
+      location: "London, UK",
+    },
+    {
+      id: "JudyymsDt9Y1wUS5gdwiYA2vvuP2",
+      createdAt: new Date("2024-01-07"),
+      isTeacher: true,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile1.png?alt=media&token=fd5abbc8-38ae-4067-a5e3-0bc136b1755c",
+      name: "Lee",
+      firstName: "Hwan Ho",
+      email: "poqw1234@naver.com",
+      snsType: "instagram",
+      snsId: "music4life_",
+      location: "Seoul, South Korea",
+    },
+    {
+      id: "pnhDMRiYy0RKzb9rz8PIM449nBE2",
+      createdAt: new Date("2024-01-07"),
+      isTeacher: true,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile5.png?alt=media&token=f34348e9-7c98-40da-840e-95320007fcad",
+      name: "ROSE",
+      firstName: "",
+      email: "riq9582@naver.com",
+      snsType: "instagram",
+      snsId: "rosy2",
+      location: "Osaka, Japan",
+    },
+    {
+      id: "iUZqgYHuywh4mgftrewUhHX6a0H3",
+      createdAt: new Date("2024-01-07"),
+      isTeacher: false,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile5.png?alt=media&token=f34348e9-7c98-40da-840e-95320007fcad",
+      name: "Jane",
+      firstName: "Doe",
+      email: "dumidumidumdum@gmail.com",
+      snsType: "instagram",
+      snsId: "Jane_DOoee",
+      location: "California, USA",
+    },
+  ];
+
+  for (const dummyUser of dummyUsers) {
+    await db.collection("USERS").doc(dummyUser.id).set(dummyUser);
   }
 }
 
