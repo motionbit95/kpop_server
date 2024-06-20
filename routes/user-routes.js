@@ -9,6 +9,7 @@ const {
   addUser,
   updateUser,
   deleteUser,
+  changePassword,
 } = require("../controllers/userController");
 const router = express.Router();
 const multer = require("multer");
@@ -25,6 +26,8 @@ router.get("/deleteAuth/:id", deleteAuth);
 router.post("/sendEmail", sendEmail);
 
 router.post("/checkVerify", checkVerify);
+
+router.post("/changePassword", changePassword);
 
 router.post("/add", addUser);
 

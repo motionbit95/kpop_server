@@ -7,9 +7,7 @@ class User {
     name,
     firstName,
     email,
-    snsType,
-    snsId,
-    location
+    password
   ) {
     this.id = id;
     this.createdAt = createdAt;
@@ -18,9 +16,7 @@ class User {
     this.name = name;
     this.firstName = firstName;
     this.email = email;
-    this.snsType = snsType;
-    this.snsId = snsId;
-    this.location = location;
+    this.password = password;
   }
 }
 

@@ -96,10 +96,16 @@ const sendEmail = async (req, res, next) => {
     });
 
     const mailOptions = {
-      from: `Your App <${process.env.EMAIL_USER}>`,
+      from: `K-POP School <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: "Email Verification",
-      text: `Your verification code is ${verificationCode}`,
+      subject:
+        "Here’s your  K-POP School membership registration verification code",
+      html: `
+        <p>Hello, this is K-POP School! We will provide you with a verification code for membership registration</p>
+        <h1>${verificationCode}</h1>
+        <p>- This email is for sending only, so you cannot reply to it</p>
+        <p>- This email will provide you with a verification code to sign up for K-POP School membership</p>
+      `,
     };
 
     await transporter.sendMail(mailOptions);
@@ -150,6 +156,25 @@ const checkVerify = async (req, res, next) => {
     }
   } catch (error) {
     res.status(500).send(error.toString());
+  }
+};
+
+const changePassword = async (req, res, next) => {
+  const { uid, newPassword } = req.body;
+
+  if (!uid || !newPassword) {
+    return res.status(400).send("Missing parameters");
+  }
+
+  try {
+    await admin.auth().updateUser(uid, {
+      password: newPassword,
+    });
+
+    res.status(200).send("Successfully changed password");
+  } catch (error) {
+    console.error("Error changing password:", error);
+    res.status(500).send("Failed to change password");
   }
 };
 
@@ -214,9 +239,7 @@ const getAllUsers = async (req, res, next) => {
           doc.data().name,
           doc.data().firstName,
           doc.data().email,
-          doc.data().snsType,
-          doc.data().snsId,
-          doc.data().location
+          doc.data().password
         );
         usersArray.push(user_data);
       });
@@ -248,9 +271,7 @@ const getUser = async (req, res, next) => {
           doc.data().name,
           doc.data().firstName,
           doc.data().email,
-          doc.data().snsType,
-          doc.data().snsId,
-          doc.data().location
+          doc.data().password
         );
 
         res.send(data);
@@ -291,6 +312,7 @@ const deleteUser = async (req, res, next) => {
 module.exports = {
   sendEmail,
   checkVerify,
+  changePassword,
   addAuth,
   deleteAuth,
   addUser,

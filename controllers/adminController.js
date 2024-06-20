@@ -673,9 +673,6 @@ async function addDummyUser() {
       name: "donatella",
       firstName: "",
       email: "nuTelllla@gmail.com",
-      snsType: "instagram",
-      snsId: "natellllla",
-      location: "Tokyo, Japan",
     },
     {
       id: "39XYlrd170gcru4DMoUjvErlHj02",
@@ -686,9 +683,6 @@ async function addDummyUser() {
       name: "Hyemi",
       firstName: "Park",
       email: "hmp3456@naver.com",
-      snsType: "x",
-      snsId: "hyemipark_t",
-      location: "Seoul, South Korea",
     },
     {
       id: "ARsT5Xayo7VBb3sZqHde9snKm9s1",
@@ -699,9 +693,6 @@ async function addDummyUser() {
       name: "Jessie",
       firstName: "",
       email: "dolphine@naver.com",
-      snsType: "instagram",
-      snsId: "jecvs2",
-      location: "San Francisco, USA",
     },
     {
       id: "5OTFfnNrricdMhHtpNtDr5TmXo03",
@@ -712,9 +703,6 @@ async function addDummyUser() {
       name: "fiatto",
       firstName: "",
       email: "aktdlTek@gmail.com",
-      snsType: "instagram",
-      snsId: "_attto_",
-      location: "New York, USA",
     },
     {
       id: "D8pthMpqPZeHldcU8dCSOWOPsc73",
@@ -725,9 +713,6 @@ async function addDummyUser() {
       name: "swaggger",
       firstName: "",
       email: "aktdlTek@gmail.com",
-      snsType: "x",
-      snsId: "boogie_09",
-      location: "New York, USA",
     },
     {
       id: "D3MGR5mp7pPslFPzvC94ZSJdC1w2",
@@ -738,9 +723,6 @@ async function addDummyUser() {
       name: "ZEN",
       firstName: "",
       email: "zeniset@gmail.com",
-      snsType: "instagram",
-      snsId: "ze2n_20",
-      location: "London, UK",
     },
     {
       id: "tNN4Fgzlb7gRWAExM4Vx3tt4Ed83",
@@ -751,9 +733,6 @@ async function addDummyUser() {
       name: "JAMEY",
       firstName: "",
       email: "dumiyam@gmail.com",
-      snsType: "x",
-      snsId: "jjj*145",
-      location: "London, UK",
     },
     {
       id: "JudyymsDt9Y1wUS5gdwiYA2vvuP2",
@@ -764,9 +743,6 @@ async function addDummyUser() {
       name: "Lee",
       firstName: "Hwan Ho",
       email: "poqw1234@naver.com",
-      snsType: "instagram",
-      snsId: "music4life_",
-      location: "Seoul, South Korea",
     },
     {
       id: "pnhDMRiYy0RKzb9rz8PIM449nBE2",
@@ -777,9 +753,6 @@ async function addDummyUser() {
       name: "ROSE",
       firstName: "",
       email: "riq9582@naver.com",
-      snsType: "instagram",
-      snsId: "rosy2",
-      location: "Osaka, Japan",
     },
     {
       id: "iUZqgYHuywh4mgftrewUhHX6a0H3",
@@ -790,9 +763,6 @@ async function addDummyUser() {
       name: "Jane",
       firstName: "Doe",
       email: "dumidumidumdum@gmail.com",
-      snsType: "instagram",
-      snsId: "Jane_DOoee",
-      location: "California, USA",
     },
   ];
 
