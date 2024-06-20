@@ -185,7 +185,12 @@ const addUser = async (req, res, next) => {
 
       data.createdAt = new Date();
 
-      const user = await firestore.collection(collectionName).add(data);
+      const user = await firestore
+        .collection(collectionName)
+        .doc(data.id)
+        .set(data);
+
+      console.log("data : ", data, user);
 
       res.send({ ...data, id: user.id });
       return;
