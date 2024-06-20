@@ -29,7 +29,15 @@ async function deleteCollection(collectionRef) {
 }
 // 모든 컬렉션을 삭제하는 함수 (하드코딩된 컬렉션 이름 사용)
 async function deleteAllCollections() {
-  const collections = ["TEACHERS", "EVENTS", "FAQ"]; // 삭제할 컬렉션 이름들
+  const collections = [
+    "TEACHERS",
+    "EVENTS",
+    "FAQ",
+    "CURRICULUM",
+    "INQUIRY",
+    "USERS",
+    "emailVerification",
+  ]; // 삭제할 컬렉션 이름들
 
   for (const collectionName of collections) {
     const collectionRef = db.collection(collectionName);
@@ -45,6 +53,7 @@ async function addDummyData(req, res) {
     await addDummyCurriculum();
     await addDummyInquiry();
     await addDummyUser();
+    await addDummyReview();
     res.send("dummy data added successfully.");
   } catch (error) {
     console.error("Error adding dummy data: ", error);
@@ -665,6 +674,46 @@ Jhon Doe`,
 async function addDummyUser() {
   const dummyUsers = [
     {
+      id: "NpFi97KtnuYtIdp7AX0dSA0rCUB3",
+      createdAt: new Date("2024-06-07"),
+      isTeacher: true,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/dora.jpeg?alt=media&token=3a550f39-db28-4d65-ba17-c37b72a97280",
+      name: "dora",
+      firstName: "",
+      email: "dora@gmail.com",
+    },
+    {
+      id: "iOuiykxaR2XyGSqy3PH1t3tSuzI3",
+      createdAt: new Date("2024-06-07"),
+      isTeacher: false,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/jina.jpeg?alt=media&token=72addf9e-0a13-4350-8c1a-f42c2ec6fe74",
+      name: "j222na",
+      firstName: "",
+      email: "jina@gmail.com",
+    },
+    {
+      id: "WoGe9wlqjFNYYBPw7I5WZGx7Ofm2",
+      createdAt: new Date("2024-06-07"),
+      isTeacher: false,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/mina.jpeg?alt=media&token=6d88af86-5eda-480a-8800-a45b9c2a2118",
+      name: "mina",
+      firstName: "",
+      email: "mi_na@gmail.com",
+    },
+    {
+      id: "Asdn6GnVWLgSYfjO2MGn0CK2lEF2",
+      createdAt: new Date("2024-06-07"),
+      isTeacher: false,
+      profile:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/luccy.jpeg?alt=media&token=67059584-ced5-49cb-a272-ceabf02f8eff",
+      name: "lu_ccy",
+      firstName: "",
+      email: "luccy@gmail.com",
+    },
+    {
       id: "zbLuCDf1OxRZTd8nKdO90J2LGd32",
       createdAt: new Date("2024-05-07"),
       isTeacher: false,
@@ -699,7 +748,7 @@ async function addDummyUser() {
       createdAt: new Date("2024-04-07"),
       isTeacher: false,
       profile:
-        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile2.png?alt=media&token=7ef93bbb-024c-4c43-a383-a9c187840c3e",
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/fiatto.jpeg?alt=media&token=e328a8f4-6be0-4ea0-ba13-d01946f111f1",
       name: "fiatto",
       firstName: "",
       email: "aktdlTek@gmail.com",
@@ -768,6 +817,65 @@ async function addDummyUser() {
 
   for (const dummyUser of dummyUsers) {
     await db.collection("USERS").doc(dummyUser.id).set(dummyUser);
+  }
+}
+
+async function addDummyReview() {
+  const dummyReviews = [
+    {
+      id: "dummyReview1",
+      createdAt: new Date("2024-04-07"),
+      teacherId: "JudyymsDt9Y1wUS5gdwiYA2vvuP2", // lee hwan ho
+      userId: "5OTFfnNrricdMhHtpNtDr5TmXo03", // fiatto
+      lessonId: "f8byokTqzpPcCAhXPoOR", // vocal advanced
+      rating: 5,
+      comment:
+        "The teacher was very kind and taught well. Vibration, which wasn't working well, was successful! I'm writing any reviews. They're all dummy texts. I hope they're at least 150 characters long.",
+    },
+    {
+      id: "dummyReview2",
+      createdAt: new Date("2024-04-06"),
+      teacherId: "ARsT5Xayo7VBb3sZqHde9snKm9s1", // jessie
+      userId: "Asdn6GnVWLgSYfjO2MGn0CK2lEF2", // lu_ccy
+      lessonId: "9g5ofRWDP319qyaWXJtp", // vocal basic
+      rating: 4,
+      comment:
+        "I'm writing any reviews. They're all dummy texts. I hope they're at least 150 characters long. The teacher was very kind and taught well. Vibration, which wasn't workaing well, was successful! I'm using the same words to block it. Does that make sense.",
+    },
+    {
+      id: "dummyReview3",
+      createdAt: new Date("2024-04-05"),
+      teacherId: "39XYlrd170gcru4DMoUjvErlHj02", // Hyemi
+      userId: "WoGe9wlqjFNYYBPw7I5WZGx7Ofm2", // mina
+      lessonId: "fxkBxqg1rr5wyuLCN02k", // dance advanced
+      rating: 4,
+      comment:
+        "I'm writing any reviews. They're all dummy texts. I hope they're at least 150 characters long. The teacher was very kind and taught well. Vibration, which wasn't workaing well, was successful! I'm using the same words to block it. Does that make sense.",
+    },
+    {
+      id: "dummyReview4",
+      createdAt: new Date("2024-04-04"),
+      teacherId: "D3MGR5mp7pPslFPzvC94ZSJdC1w2", // ZEN
+      userId: "iOuiykxaR2XyGSqy3PH1t3tSuzI3", // j222na
+      lessonId: "zenTYk73llpKtujPizpL", // dance professional
+      rating: 5,
+      comment:
+        "The teacher was very kind and taught well. Vibration, which wasn't working well, was successful! I'm writing any reviews. They're all dummy texts. I hope they're at least 150 characters long.",
+    },
+    {
+      id: "dummyReview5",
+      createdAt: new Date("2024-04-03"),
+      teacherId: "pnhDMRiYy0RKzb9rz8PIM449nBE2", // ROSE
+      userId: "NpFi97KtnuYtIdp7AX0dSA0rCUB3", // dora
+      lessonId: "IAsgKYQo27yljfJH8knV", // dance beginner
+      rating: 5,
+      comment:
+        "The teacher was very kind and taught well. Vibration, which wasn't working well, was successful! I'm writing any reviews. They're all dummy texts. I hope they're at least 150 characters long.",
+    },
+  ];
+
+  for (const dummyReview of dummyReviews) {
+    await db.collection("REVIEW").doc(dummyReview.id).set(dummyReview);
   }
 }
 
