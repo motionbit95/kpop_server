@@ -1,5 +1,4 @@
 "use strict";
-const { response } = require("../app");
 const firebase = require("../db");
 const Event = require("../models/event");
 const firestore = firebase.firestore();
