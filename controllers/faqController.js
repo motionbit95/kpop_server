@@ -44,7 +44,7 @@ const getFAQ = async (req, res, next) => {
 
 const getAllFAQ = async (req, res, next) => {
   try {
-    const snapshot = await firestore.collection("FAQ").get();
+    const snapshot = await firestore.collection("FAQ").orderBy("index").get();
     const data = snapshot;
     const faqArray = [];
     if (data.empty) {
@@ -71,6 +71,10 @@ const getAllFAQ = async (req, res, next) => {
 
 const updateFAQ = async (req, res, next) => {
   console.log("id : ", req.body.id);
+  if (!req.body.id) {
+    res.send("none");
+    return;
+  }
   const faq = await firestore
     .collection("FAQ")
     .doc(req.body.id)
