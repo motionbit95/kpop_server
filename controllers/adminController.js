@@ -2,8 +2,41 @@
 const firebase = require("../db");
 const Event = require("../models/event");
 const db = firebase.firestore();
+const { v4: uuidv4 } = require("uuid");
+const path = require("path");
 
 const admin = require("firebase-admin");
+const bucket = admin.storage().bucket();
+
+// 이미지 업로드 엔드포인트
+async function uploadImage(req, res) {
+  try {
+    if (!req.file) {
+      return res.status(400).send("No file uploaded.");
+    }
+
+    const blob = bucket.file(uuidv4() + path.extname(req.file.originalname));
+    const blobStream = blob.createWriteStream({
+      metadata: {
+        contentType: req.file.mimetype,
+      },
+    });
+
+    blobStream.on("error", (err) => {
+      res.status(500).send({ message: err.message });
+    });
+
+    blobStream.on("finish", async () => {
+      // Public URL 만들기
+      const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
+      res.status(200).send({ imageUrl: publicUrl });
+    });
+
+    blobStream.end(req.file.buffer);
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+}
 
 // Firestore 내의 모든 문서를 삭제하는 함수
 async function deleteCollection(collectionRef) {
@@ -71,6 +104,12 @@ async function addDummyEvent() {
       thumbnail:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/event1.png?alt=media&token=6b01cfac-ee0b-4bc8-b59c-f6532568d834",
       createdAt: new Date(),
+      discountType: "%",
+      discountAmount: 10,
+      deadline_start: new Date(2024, 7, 1),
+      deadline_end: new Date(2024, 7, 10),
+      use_start: new Date(2024, 7, 1),
+      use_end: new Date(2024, 7, 15),
     },
     {
       id: "Yl9NlVh2JAdG5dZtekif",
@@ -81,6 +120,12 @@ async function addDummyEvent() {
       thumbnail:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/event2.png?alt=media&token=42afe3b0-85ab-473b-8277-47731ecf0909",
       createdAt: new Date(),
+      discountType: "dollor",
+      discountAmount: 20,
+      deadline_start: new Date(2024, 7, 1),
+      deadline_end: new Date(2024, 7, 30),
+      use_start: new Date(2024, 7, 1),
+      use_end: new Date(2024, 8, 15),
     },
     {
       id: "fGoDaD51M3AHIetLeEF9",
@@ -91,6 +136,12 @@ async function addDummyEvent() {
       thumbnail:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/event3.png?alt=media&token=f39f2eaa-8157-4c15-89ba-1bfaaab51533",
       createdAt: new Date(),
+      discountType: "dollor",
+      discountAmount: 10,
+      deadline_start: new Date(2024, 7, 1),
+      deadline_end: new Date(2024, 7, 8),
+      use_start: new Date(2024, 7, 8),
+      use_end: new Date(2024, 7, 16),
     },
     {
       id: "j3KmtBCNRpU8M2GQzFKl",
@@ -101,6 +152,12 @@ async function addDummyEvent() {
       thumbnail:
         "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/event4.png?alt=media&token=33db242e-9cf4-4c93-9f64-bab70e860d9b",
       createdAt: new Date(),
+      discountType: "dollor",
+      discountAmount: 10,
+      deadline_start: new Date(2024, 7, 1),
+      deadline_end: new Date(2024, 7, 9),
+      use_start: new Date(2024, 7, 9),
+      use_end: new Date(2024, 7, 12),
     },
   ];
 
@@ -878,4 +935,4 @@ async function addDummyReview() {
   }
 }
 
-module.exports = { deleteAllCollections, addDummyData };
+module.exports = { deleteAllCollections, addDummyData, uploadImage };

@@ -65,7 +65,13 @@ const getAllEvents = async (req, res, next) => {
           doc.data().createdAt,
           doc.data().thumbnail,
           doc.data().title,
-          doc.data().description
+          doc.data().description,
+          doc.data().discountType,
+          doc.data().discountAmount,
+          doc.data().deadline_start,
+          doc.data().deadline_end,
+          doc.data().use_start,
+          doc.data().use_end
         );
         array.push(data);
       });
@@ -95,7 +101,13 @@ const getEvent = async (req, res, next) => {
           doc.data().createdAt,
           doc.data().thumbnail,
           doc.data().title,
-          doc.data().description
+          doc.data().description,
+          doc.data().discountType,
+          doc.data().discountAmount,
+          doc.data().deadline_start,
+          doc.data().deadline_end,
+          doc.data().use_start,
+          doc.data().use_end
         );
 
         res.send(data);

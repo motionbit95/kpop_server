@@ -2,8 +2,15 @@ var express = require("express");
 const {
   deleteAllCollections,
   addDummyData,
+  uploadImage,
 } = require("../controllers/adminController");
 var router = express.Router();
+
+const multer = require("multer");
+
+// Multer 설정
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -26,5 +33,7 @@ router.get("/delete-all", async (req, res) => {
 });
 
 router.get("/add-dummy", addDummyData);
+
+router.post("/upload-image", upload.single("image"), uploadImage);
 
 module.exports = router;
