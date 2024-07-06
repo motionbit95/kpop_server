@@ -6,6 +6,7 @@ const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 
 const admin = require("firebase-admin");
+const { strLink } = require("fs");
 const bucket = admin.storage().bucket();
 
 // 이미지 업로드 엔드포인트
@@ -79,13 +80,14 @@ async function deleteAllCollections() {
 
 async function addDummyData(req, res) {
   try {
-    await addDummyEvent();
-    await addDummyTeacher();
-    await addDummyFAQ();
-    await addDummyCurriculum();
-    await addDummyInquiry();
-    await addDummyUser();
-    await addDummyReview();
+    // await addDummyEvent();
+    // await addDummyTeacher();
+    // await addDummyFAQ();
+    // await addDummyCurriculum();
+    // await addDummyInquiry();
+    // await addDummyUser();
+    // await addDummyReview();
+    await addDummyHome();
     res.send("dummy data added successfully.");
   } catch (error) {
     console.error("Error adding dummy data: ", error);
@@ -932,6 +934,155 @@ async function addDummyReview() {
 
   for (const dummyReview of dummyReviews) {
     await db.collection("REVIEW").doc(dummyReview.id).set(dummyReview);
+  }
+}
+
+async function addDummyHome() {
+  const dummyDatas = [
+    {
+      id: "main",
+      banner: [
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/banner1.png?alt=media&token=d733e8ca-b3e1-4d02-8040-80790dfb5583",
+        "",
+      ],
+      description: `We will help you turn your dream of becoming a K-pop star into reality! Shine on stage like a K-pop star through
+classes taught by original vocal and dance trainers who have nurtured your favorite K-pop stars. K-pop School offers
+the chance to acquire the skills and charms of internationally acclaimed K-pop artists. Real-time video classes and
+VOD content make learning easy and fun anytime, anywhere. Start your K-pop journey right now.`,
+      strLink: "Lessons",
+      promotion_link: "",
+      promotion:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/promt.png?alt=media&token=253b0cb2-9236-4b91-8598-a9519688b987",
+      withus_link: "",
+      withus:
+        "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/whylearn.png?alt=media&token=e8c38182-6611-44a3-92fa-06df4876d84f",
+    },
+    {
+      id: "matching",
+      title1: "Vocal Trainer",
+      trainer1: {
+        name: "Jessie",
+        description: `- SM, iNetwork entertainmen vocal trainer
+- Vocal trainer for 2Eyes, Red Velvet, MOMOLAND, Lee Hae Yi
+- Actor vocal trainer (Kim So Jung, Kim Yoo Jung, Lee Yoo Bi, Lee Soo Kyung, etc.)
+- Various broadcast programs (Producer 101, King of Masked, K-POP star, etc.)`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile2.png?alt=media&token=7ef93bbb-024c-4c43-a383-a9c187840c3e",
+        strLink: "/teachers/ARsT5Xayo7VBb3sZqHde9snKm9s1",
+      },
+      trainer2: {
+        name: "Lee Hwan Ho",
+        description: `- SM entertainment vocal trainer
+- Selling multiple albums and participating in chorus sessions
+- Whee-sung, Ali, URBAN ZAKAPA, DAY6, N.Flying, etc. Vocal Trainer`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile1.png?alt=media&token=fd5abbc8-38ae-4067-a5e3-0bc136b1755c",
+        strLink: "/teachers/JudyymsDt9Y1wUS5gdwiYA2vvuP2",
+      },
+      title2: "Dance Trainer",
+      trainer3: {
+        name: "Hyemi Park",
+        description: `SM entertainment / Nega network Entertainment / Maru Entertainment Choreography Trainer`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile3.png?alt=media&token=2d874079-37e9-472f-97cb-520dba7d9276",
+        strLink: "/teachers/39XYlrd170gcru4DMoUjvErlHj022",
+      },
+      trainer4: {
+        name: "ZEN",
+        description: `- Professor of K-POP at Kangdong University and HOWON University
+- Concert dancer / Training`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile4.png?alt=media&token=f72d4aab-81cf-4821-8869-bfdc4af93863",
+        strLink: "/teachers/D3MGR5mp7pPslFPzvC94ZSJdC1w2",
+      },
+      trainer5: {
+        name: "ROSE",
+        description: `- SM Entertainment Choreography Trainer
+- ADIDAS stella event performance director`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/profile5.png?alt=media&token=f34348e9-7c98-40da-840e-95320007fcad",
+        strLink: "/teachers/pnhDMRiYy0RKzb9rz8PIM449nBE2",
+      },
+    },
+    {
+      id: "lessons",
+      title: "Lessons",
+      vocal: {
+        description: `Unleash the magic of K-pop with your voice! K-pop School's vocal course allows you to take your vocal skills to the next level through professional vocal training.
+
+You can practice the latest K-pop hits with the same vocal trainer who taught and coached the K-pop stars you love. Learn everything it takes to become a K-pop star, including pronunciation, vocalization, and emotional expression. Prepare your own stage right now!`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/vocal_lesson.png?alt=media&token=50aae125-8900-44b7-95b2-9b80a8901c73",
+        strLink: "/curriculum/Vocal",
+      },
+      dance: {
+        description: `Discover your own dance style at K-pop school! You can learn amazing choreography and perfect it like a K-pop idol through professional dance classes.
+
+Prepare to stand on the stage you have always longed for with a trainer who has taught K-pop stars. Dynamic dance routines, stylish choreography, and energetic performances will help you become the true star of the stage. Are you ready to dive into the world of K-pop?`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/dance_lesson.png?alt=media&token=18769826-64d5-49c6-a8c2-29ddc4c9c91f",
+        strLink: "/curriculum/Dance",
+      },
+    },
+    {
+      id: "course",
+      title: "Our Courses",
+      beginner: {
+        description: `Step into the spotlight with K-Pop School. Get ready to move and groove. It's your time to shine. Join now!
+#KPopVibes
+#DanceDreams`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/beginner.png?alt=media&token=5af6bce7-5a7b-44cd-974e-0912ba6db853",
+        strLink: "",
+      },
+      intermediate: {
+        description: `Ready to level up your K-pop game? Our Intermediate Course is the ticket for you to master killer melodies and harmonies like a pro.
+#KPopStar #NextLevel`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/intermediate.png?alt=media&token=b3fc9b24-9f34-48ee-9620-c9b48cca10a6",
+        strLink: "",
+      },
+      advanced: {
+        description: `Take the center stage with our Advanced Vocal Course. Advanced Dance Course is your battlefield. It's not just a class; it's your pathway to stardom.
+#BeTheIcon #KPopMastery`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/advanced.png?alt=media&token=9a69bd37-c87f-49b6-a2b4-148980c33ea5",
+        strLink: "",
+      },
+      professional: {
+        description: `Have you dreamt of being a K-pop prodigy? Our Professional Course is the last step in your journey to achieving K-pop supremacy.
+#ProDebut #KPopPro`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/professional.png?alt=media&token=a00cac3c-f666-42eb-9884-b5ff92df2b63",
+        strLink: "",
+      },
+    },
+    {
+      id: "lessonType",
+      one: {
+        description: `Unlock your full K-pop potential by taking private lessons at K-Pop School. Elevate your artistry, boost your confidence, and get ready to take the K-pop world by storm!`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/one.png?alt=media&token=dd81aa7c-1494-41e3-be71-96a205f2b25f",
+        strLink: "",
+      },
+      six: {
+        description: `Step into the vibrant ensemble of
+K-Pop School's group lessons, where collective energy combines with individual attention.`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/six.png?alt=media&token=f4beb3d8-8eb8-4f7d-aa6b-3bd1d7bf2302",
+        strLink: "",
+      },
+      vod: {
+        description: `Our industry experts have meticulously crafted video sessions, ensuring that you can learn the moves and grooves at your own pace.`,
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/motionbit-kpopschool.appspot.com/o/vod.png?alt=media&token=25971ecc-9358-4ce9-8f3d-553af8b59848",
+        strLink: "",
+      },
+    },
+  ];
+
+  for (const dummyData of dummyDatas) {
+    await db.collection("HOME").doc(dummyData.id).set(dummyData);
   }
 }
 
