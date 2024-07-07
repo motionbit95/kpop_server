@@ -313,6 +313,37 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
+// 필드와 키워드로 검색하는 엔드포인트
+const searchByKeyword = async (req, res) => {
+  const { field, keyword } = req.body;
+
+  if (!field || !keyword) {
+    return res.status(400).json({ msg: "Field and keyword are required" });
+  }
+
+  try {
+    const querySnapshot = await firestore
+      .collection(collectionName) // 컬렉션 이름으로 변경하세요
+      .where(field, ">=", keyword)
+      .where(field, "<=", keyword + "\uf8ff")
+      .get();
+
+    if (querySnapshot.empty) {
+      return res.status(404).json({ msg: "No matching documents." });
+    }
+
+    const results = [];
+    querySnapshot.forEach((doc) => {
+      results.push(doc.data());
+    });
+
+    res.json(results);
+  } catch (err) {
+    console.error("Error searching documents:", err);
+    res.status(500).json({ msg: "Server error" });
+  }
+};
+
 module.exports = {
   sendEmail,
   checkVerify,
@@ -324,4 +355,5 @@ module.exports = {
   deleteUser,
   getUser,
   updateUser,
+  searchByKeyword,
 };

@@ -10,6 +10,7 @@ const {
   updateUser,
   deleteUser,
   changePassword,
+  searchByKeyword,
 } = require("../controllers/userController");
 const router = express.Router();
 const multer = require("multer");
@@ -38,5 +39,7 @@ router.post("/get", getUser);
 router.post("/update", updateUser);
 
 router.post("/delete", deleteUser);
+
+router.post("/search", searchByKeyword);
 
 module.exports = router;

@@ -5,6 +5,7 @@ const {
   deleteTeacher,
   getTeacher,
   updateTeacher,
+  searchByKeyword,
 } = require("../controllers/teacherController");
 const router = express.Router();
 const multer = require("multer");
@@ -22,5 +23,7 @@ router.post("/get", getTeacher);
 router.post("/update", upload.single("profile"), updateTeacher);
 
 router.post("/delete", deleteTeacher);
+
+router.post("/search", searchByKeyword);
 
 module.exports = router;

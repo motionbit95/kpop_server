@@ -1,4 +1,5 @@
 "use strict";
+const db = require("../db");
 const firebase = require("../db");
 const Teacher = require("../models/teachers");
 const firestore = firebase.firestore();
@@ -15,7 +16,10 @@ const addTeacher = async (req, res, next) => {
       data.rating = 0;
       data.student = 0;
 
-      const teacher = await firestore.collection("TEACHERS").add(data);
+      const teacher = await firestore
+        .collection("TEACHERS")
+        .doc(data.id)
+        .set(data);
 
       res.send({ ...data, id: teacher.id });
       return;
@@ -56,7 +60,10 @@ const addTeacher = async (req, res, next) => {
 
 const getAllTeachers = async (req, res, next) => {
   try {
-    const snapshot = await firestore.collection("TEACHERS").get();
+    const snapshot = await firestore
+      .collection("TEACHERS")
+      .orderBy("createdAt")
+      .get();
     const data = snapshot;
     const teachersArray = [];
     if (data.empty) {
@@ -143,10 +150,42 @@ const deleteTeacher = async (req, res, next) => {
   }
 };
 
+// 필드와 키워드로 검색하는 엔드포인트
+const searchByKeyword = async (req, res) => {
+  const { field, keyword } = req.body;
+
+  if (!field || !keyword) {
+    return res.status(400).json({ msg: "Field and keyword are required" });
+  }
+
+  try {
+    const querySnapshot = await firestore
+      .collection("TEACHERS") // 컬렉션 이름으로 변경하세요
+      .where(field, ">=", keyword)
+      .where(field, "<=", keyword + "\uf8ff")
+      .get();
+
+    if (querySnapshot.empty) {
+      return res.status(404).json({ msg: "No matching documents." });
+    }
+
+    const results = [];
+    querySnapshot.forEach((doc) => {
+      results.push(doc.data());
+    });
+
+    res.json(results);
+  } catch (err) {
+    console.error("Error searching documents:", err);
+    res.status(500).json({ msg: "Server error" });
+  }
+};
+
 module.exports = {
   addTeacher,
   getAllTeachers,
   deleteTeacher,
   getTeacher,
   updateTeacher,
+  searchByKeyword,
 };
