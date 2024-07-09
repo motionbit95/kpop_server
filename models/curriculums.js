@@ -15,7 +15,8 @@ class Curriculum {
     difficulty,
     likes,
     review,
-    student
+    student,
+    classes
   ) {
     this.id = id;
     this.title = title;
@@ -33,6 +34,7 @@ class Curriculum {
     this.likes = likes;
     this.review = review;
     this.student = student;
+    this.classes = classes;
   }
 }
 

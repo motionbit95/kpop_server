@@ -5,6 +5,7 @@ const {
   validateRequest,
 } = require("../public/javascripts/validations.js");
 require("dotenv").config();
+const axios = require("axios");
 
 const ZOOM_CLIENT_ID = process.env.ZOOM_CLIENT_ID;
 const ZOOM_CLIENT_SECRET = process.env.ZOOM_CLIENT_SECRET;

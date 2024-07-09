@@ -42,7 +42,8 @@ const getCurriculum = async (req, res, next) => {
           doc.data().difficulty,
           doc.data().likes,
           doc.data().review,
-          doc.data().student
+          doc.data().student,
+          doc.data().classes
         );
 
         res.send(data);
@@ -78,7 +79,8 @@ const getAllCurriculum = async (req, res, next) => {
           doc.data().difficulty,
           doc.data().likes,
           doc.data().review,
-          doc.data().student
+          doc.data().student,
+          doc.data().classes
         );
         array.push(data);
       });

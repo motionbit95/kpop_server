@@ -15,7 +15,7 @@ const KJUR = require("jsrsasign"); // "jsrsasign": "^11.0.2"
 router.post("/create-meeting", async (req, res) => {
   try {
     let accessToken = await getZoomAccessToken();
-    // console.log(accessToken);
+    console.log(accessToken);
     const response = await axios.post(
       "https://api.zoom.us/v2/users/me/meetings",
       {
