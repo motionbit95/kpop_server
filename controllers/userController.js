@@ -243,7 +243,10 @@ const getAllUsers = async (req, res, next) => {
           doc.data().name,
           doc.data().firstName,
           doc.data().email,
-          doc.data().password
+          doc.data().password,
+          doc.data().interest,
+          doc.data().experience,
+          doc.data().birthday
         );
         usersArray.push(user_data);
       });
@@ -275,7 +278,10 @@ const getUser = async (req, res, next) => {
           doc.data().name,
           doc.data().firstName,
           doc.data().email,
-          doc.data().password
+          doc.data().password,
+          doc.data().interest,
+          doc.data().experience,
+          doc.data().birthday
         );
 
         res.send(data);

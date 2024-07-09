@@ -1079,6 +1079,308 @@ K-Pop School's group lessons, where collective energy combines with individual a
         strLink: "",
       },
     },
+    {
+      id: "vocal_course",
+      one: {
+        section1: {
+          title: "Beginner Course",
+          month: 3,
+          session: 12,
+          description: `Unlock Your True Vocal Potential with Personalized 1:1 Lessons
+
+Discover the power of your unique voice through our tailored 1:1 vocal lessons. Our experienced instructors, trained in the latest K-pop techniques, will guide you to develop proper breathing, pitch control, and stage presence. Whether you're a beginner or looking to refine your skills, our personalized approach ensures rapid progress and builds confidence. Join us to elevate your singing to professional levels and prepare for your moment in the spotlight.`,
+        },
+        section2: {
+          title: "Intermediate Course",
+          month: 3,
+          session: 12,
+          description: `- Intermediate Vocal Technique: Advanced Breathing and Vocal Techniques
+- Compound Pronunciation Practice: Deepening Korean Pronunciation
+- Practice K-pop songs of various genres
+- Strengthening stage expression
+- In-depth practice of rhythm and beat
+- Deepening empathy and expression
+- Diversifying vocal tones
+- In-depth live performance
+- Solo song practice and feedback
+- Group Project: Collaboration
+- Music Video Production Basics
+- Music video production and evaluation`,
+        },
+        section3: {
+          title: "Advanced Course",
+          month: 3,
+          session: 12,
+          description: `- Advanced Vocal Techniques: Breathing and Vocalization Specialization
+- Advanced pronunciation practice and interpretation
+- Complex genre K-pop song practice
+- Stage charisma and expressiveness
+- Complex rhythm and beat practice
+- Storytelling and conveying emotions
+- Developing a unique vocal style
+- professional live performance
+- Writing your own songs and providing feedback
+- Creative Project: Create your own song
+- Advanced music video production
+- Music video presentation and review`,
+        },
+        section4: {
+          title: "Professional Course",
+          month: 3,
+          session: 12,
+          description: `- Professional vocal technique: personalized vocalization
+- Professional-level pronunciation and expression
+- Various genre complex K-pop songs
+- Professional stage performance and staging
+- Professional Rhythm and Beat Master
+- In-depth storytelling and conveying emotions
+- Vocal identity as an individual artist
+- large-scale live performance
+- Professionally composed songs and album production
+- Artist Branding and Marketing Strategy
+- Professional music video production
+- Final performance and professional debut audio`,
+        },
+      },
+      six: {
+        section1: {
+          title: "Beginner Course",
+          month: 3,
+          session: 12,
+          description: `Unlock Your True Vocal Potential with Personalized 1:1 Lessons
+
+Discover the power of your unique voice through our tailored 1:1 vocal lessons. Our experienced instructors, trained in the latest K-pop techniques, will guide you to develop proper breathing, pitch control, and stage presence. Whether you're a beginner or looking to refine your skills, our personalized approach ensures rapid progress and builds confidence. Join us to elevate your singing to professional levels and prepare for your moment in the spotlight.`,
+        },
+        section2: {
+          title: "Intermediate Course",
+          month: 3,
+          session: 12,
+          description: `- Intermediate Vocal Technique: Advanced Breathing and Vocal Techniques
+- Compound Pronunciation Practice: Deepening Korean Pronunciation
+- Practice K-pop songs of various genres
+- Strengthening stage expression
+- In-depth practice of rhythm and beat
+- Deepening empathy and expression
+- Diversifying vocal tones
+- In-depth live performance
+- Solo song practice and feedback
+- Group Project: Collaboration
+- Music Video Production Basics
+- Music video production and evaluation`,
+        },
+        section3: {
+          title: "Advanced Course",
+          month: 3,
+          session: 12,
+          description: `- Advanced Vocal Techniques: Breathing and Vocalization Specialization
+- Advanced pronunciation practice and interpretation
+- Complex genre K-pop song practice
+- Stage charisma and expressiveness
+- Complex rhythm and beat practice
+- Storytelling and conveying emotions
+- Developing a unique vocal style
+- professional live performance
+- Writing your own songs and providing feedback
+- Creative Project: Create your own song
+- Advanced music video production
+- Music video presentation and review`,
+        },
+        section4: {
+          title: "Professional Course",
+          month: 3,
+          session: 12,
+          description: `- Professional vocal technique: personalized vocalization
+- Professional-level pronunciation and expression
+- Various genre complex K-pop songs
+- Professional stage performance and staging
+- Professional Rhythm and Beat Master
+- In-depth storytelling and conveying emotions
+- Vocal identity as an individual artist
+- large-scale live performance
+- Professionally composed songs and album production
+- Artist Branding and Marketing Strategy
+- Professional music video production
+- Final performance and professional debut audio`,
+        },
+      },
+      vod: {
+        section1: {
+          title: "Beginner Course",
+          month: 0,
+          session: 0,
+          description: `We are preparing for class`,
+        },
+        section2: {
+          title: "Intermediate Course",
+          month: 0,
+          session: 0,
+          description: `We are preparing for class`,
+        },
+        section3: {
+          title: "Advanced Course",
+          month: 0,
+          session: 0,
+          description: `We are preparing for class`,
+        },
+        section4: {
+          title: "Professional Course",
+          month: 0,
+          session: 0,
+          description: `We are preparing for class`,
+        },
+      },
+    },
+    {
+      id: "dance_course",
+      one: {
+        section1: {
+          title: "Beginner Course",
+          month: 3,
+          session: 12,
+          description: `Unlock Your True Vocal Potential with Personalized 1:1 Lessons
+
+Discover the power of your unique voice through our tailored 1:1 vocal lessons. Our experienced instructors, trained in the latest K-pop techniques, will guide you to develop proper breathing, pitch control, and stage presence. Whether you're a beginner or looking to refine your skills, our personalized approach ensures rapid progress and builds confidence. Join us to elevate your singing to professional levels and prepare for your moment in the spotlight.`,
+        },
+        section2: {
+          title: "Intermediate Course",
+          month: 3,
+          session: 12,
+          description: `- Intermediate Vocal Technique: Advanced Breathing and Vocal Techniques
+- Compound Pronunciation Practice: Deepening Korean Pronunciation
+- Practice K-pop songs of various genres
+- Strengthening stage expression
+- In-depth practice of rhythm and beat
+- Deepening empathy and expression
+- Diversifying vocal tones
+- In-depth live performance
+- Solo song practice and feedback
+- Group Project: Collaboration
+- Music Video Production Basics
+- Music video production and evaluation`,
+        },
+        section3: {
+          title: "Advanced Course",
+          month: 3,
+          session: 12,
+          description: `- Advanced Vocal Techniques: Breathing and Vocalization Specialization
+- Advanced pronunciation practice and interpretation
+- Complex genre K-pop song practice
+- Stage charisma and expressiveness
+- Complex rhythm and beat practice
+- Storytelling and conveying emotions
+- Developing a unique vocal style
+- professional live performance
+- Writing your own songs and providing feedback
+- Creative Project: Create your own song
+- Advanced music video production
+- Music video presentation and review`,
+        },
+        section4: {
+          title: "Professional Course",
+          month: 3,
+          session: 12,
+          description: `- Professional vocal technique: personalized vocalization
+- Professional-level pronunciation and expression
+- Various genre complex K-pop songs
+- Professional stage performance and staging
+- Professional Rhythm and Beat Master
+- In-depth storytelling and conveying emotions
+- Vocal identity as an individual artist
+- large-scale live performance
+- Professionally composed songs and album production
+- Artist Branding and Marketing Strategy
+- Professional music video production
+- Final performance and professional debut audio`,
+        },
+      },
+      six: {
+        section1: {
+          title: "Beginner Course",
+          month: 3,
+          session: 12,
+          description: `Unlock Your True Vocal Potential with Personalized 1:1 Lessons
+
+Discover the power of your unique voice through our tailored 1:1 vocal lessons. Our experienced instructors, trained in the latest K-pop techniques, will guide you to develop proper breathing, pitch control, and stage presence. Whether you're a beginner or looking to refine your skills, our personalized approach ensures rapid progress and builds confidence. Join us to elevate your singing to professional levels and prepare for your moment in the spotlight.`,
+        },
+        section2: {
+          title: "Intermediate Course",
+          month: 3,
+          session: 12,
+          description: `- Intermediate Vocal Technique: Advanced Breathing and Vocal Techniques
+- Compound Pronunciation Practice: Deepening Korean Pronunciation
+- Practice K-pop songs of various genres
+- Strengthening stage expression
+- In-depth practice of rhythm and beat
+- Deepening empathy and expression
+- Diversifying vocal tones
+- In-depth live performance
+- Solo song practice and feedback
+- Group Project: Collaboration
+- Music Video Production Basics
+- Music video production and evaluation`,
+        },
+        section3: {
+          title: "Advanced Course",
+          month: 3,
+          session: 12,
+          description: `- Advanced Vocal Techniques: Breathing and Vocalization Specialization
+- Advanced pronunciation practice and interpretation
+- Complex genre K-pop song practice
+- Stage charisma and expressiveness
+- Complex rhythm and beat practice
+- Storytelling and conveying emotions
+- Developing a unique vocal style
+- professional live performance
+- Writing your own songs and providing feedback
+- Creative Project: Create your own song
+- Advanced music video production
+- Music video presentation and review`,
+        },
+        section4: {
+          title: "Professional Course",
+          month: 3,
+          session: 12,
+          description: `- Professional vocal technique: personalized vocalization
+- Professional-level pronunciation and expression
+- Various genre complex K-pop songs
+- Professional stage performance and staging
+- Professional Rhythm and Beat Master
+- In-depth storytelling and conveying emotions
+- Vocal identity as an individual artist
+- large-scale live performance
+- Professionally composed songs and album production
+- Artist Branding and Marketing Strategy
+- Professional music video production
+- Final performance and professional debut audio`,
+        },
+      },
+      vod: {
+        section1: {
+          title: "Beginner Course",
+          month: 0,
+          session: 0,
+          description: `We are preparing for class`,
+        },
+        section2: {
+          title: "Intermediate Course",
+          month: 0,
+          session: 0,
+          description: `We are preparing for class`,
+        },
+        section3: {
+          title: "Advanced Course",
+          month: 0,
+          session: 0,
+          description: `We are preparing for class`,
+        },
+        section4: {
+          title: "Professional Course",
+          month: 0,
+          session: 0,
+          description: `We are preparing for class`,
+        },
+      },
+    },
   ];
 
   for (const dummyData of dummyDatas) {
