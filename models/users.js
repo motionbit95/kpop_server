@@ -10,7 +10,8 @@ class User {
     password,
     interest,
     experience,
-    birthday
+    birthday,
+    gender
   ) {
     this.id = id;
     this.createdAt = createdAt;
@@ -23,6 +24,7 @@ class User {
     this.interest = interest;
     this.experience = experience;
     this.birthday = birthday;
+    this.gender = gender;
   }
 }
 

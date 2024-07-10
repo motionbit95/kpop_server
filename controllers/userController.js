@@ -246,7 +246,8 @@ const getAllUsers = async (req, res, next) => {
           doc.data().password,
           doc.data().interest,
           doc.data().experience,
-          doc.data().birthday
+          doc.data().birthday,
+          doc.data().gender
         );
         usersArray.push(user_data);
       });
@@ -281,7 +282,8 @@ const getUser = async (req, res, next) => {
           doc.data().password,
           doc.data().interest,
           doc.data().experience,
-          doc.data().birthday
+          doc.data().birthday,
+          doc.data().gender
         );
 
         res.send(data);
