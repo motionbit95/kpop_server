@@ -84,8 +84,8 @@ async function addDummyData(req, res) {
     // await addDummyTeacher();
     // await addDummyFAQ();
     // await addDummyCurriculum();
-    // await addDummyInquiry();
-    await addDummyUser();
+    await addDummyInquiry();
+    // await addDummyUser();
     // await addDummyReview();
     // await addDummyHome();
     res.send("dummy data added successfully.");
@@ -2553,51 +2553,364 @@ async function addDummyInquiry() {
   let now = new Date();
   const dummyInquiries = [
     {
-      id: "vPfoGGRJGzKzK7M3R42A",
+      id: "1",
       uid: "kpopschool",
-      createdAt: now,
+      createdAt: new Date(now.getTime() - 1 * 24 * 60 * 60 * 1000),
       tag: "refund/payment",
-      title: "Duplicate payment",
-      date:
-        String(now.getMonth() + 1).padStart(2, "0") +
-        "-" +
-        String(now.getDate()).padStart(2, "0") +
-        "-" +
-        now.getFullYear(),
+      title: "Duplicate payment on January",
+      date: `07-10-2023`,
       state: "waiting for",
       details: `Dear Kpopschool,
-I am writing to bring to your attention an issue regarding a duplicate payment. It appears that my account has been charged twice for the same transaction.
-
-Could you please investigate this matter and initiate a refund for the duplicate charge at your earliest convenience? I have attached the relevant transaction details for your reference.
-
-Thank you for your prompt attention to this matter.
-
-Best regards,
-Jhon Doe`,
+  I am writing to bring to your attention an issue regarding a duplicate payment in January. It appears that my account has been charged twice for the same transaction in that month.
+  
+  Could you please investigate this matter and initiate a refund for the duplicate charge at your earliest convenience? I have attached the relevant transaction details for your reference.
+  
+  Thank you for your prompt attention to this matter.
+  
+  Best regards,
+  Jane Smith`,
     },
     {
-      id: "wFgmvGwAMegowItnOCUO",
+      id: "2",
       uid: "kpopschool",
-      createdAt: now,
-      tag: "ETC",
-      title: "find deleted post",
-      date:
-        String(now.getMonth() + 1).padStart(2, "0") +
-        "-" +
-        String(now.getDate()).padStart(2, "0") +
-        "-" +
-        now.getFullYear(),
+      createdAt: new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Incorrect amount charged",
+      date: `07-09-2023`,
       state: "waiting for",
       details: `Dear Kpopschool,
-
-I am writing to request assistance in locating a deleted post from my account. I accidentally deleted a post that is important to me and would like to recover it if possible.
-
-Could you please help me restore the deleted post? I would greatly appreciate any assistance you can provide in retrieving it.
-
-Thank you for your time and help.
-
-Best regards,
-Jhon Doe`,
+  I noticed an incorrect amount charged to my account. The charge is much higher than expected and I suspect it might be a duplicate.
+  
+  Can you please review the transaction and process a refund if necessary? I have attached my transaction details for your reference.
+  
+  Thank you for your cooperation.
+  
+  Sincerely,
+  Alex Johnson`,
+    },
+    {
+      id: "3",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Double charge for same service",
+      date: `07-08-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I am contacting you regarding a double charge for the same service. My account was billed twice for a single service in February.
+  
+  Please investigate this and issue a refund for the duplicate charge. I have included the transaction details for your review.
+  
+  Thanks for your prompt attention.
+  
+  Regards,
+  Emily Davis`,
+    },
+    {
+      id: "4",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 4 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Unrecognized duplicate charge",
+      date: `07-07-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I recently found an unrecognized duplicate charge on my account. I did not authorize multiple payments for this transaction.
+  
+  Can you please look into this and process a refund for the extra charge? The transaction details are attached.
+  
+  Thank you for your help.
+  
+  Best,
+  Michael Brown`,
+    },
+    {
+      id: "5",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Overcharged for subscription",
+      date: `07-06-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  It appears that I have been overcharged for my subscription this month. There are two charges for the same period.
+  
+  Please review and refund the duplicate charge. Attached are the details of the transactions.
+  
+  Thank you for addressing this issue promptly.
+  
+  Best regards,
+  Linda Green`,
+    },
+    {
+      id: "6",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 6 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Duplicate billing for service",
+      date: `07-05-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I noticed a duplicate billing for the service I received last week. My account was charged twice on the same day.
+  
+  Could you please verify this and issue a refund for the duplicate payment? The transaction details are enclosed.
+  
+  Thank you for your swift action.
+  
+  Regards,
+  Robert Wilson`,
+    },
+    {
+      id: "7",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Refund request for double charge",
+      date: `07-04-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I am writing to request a refund for a double charge on my account. This error occurred during the last billing cycle.
+  
+  Please look into this matter and process a refund at your earliest convenience. The transaction details are attached for your reference.
+  
+  Thank you for your prompt response.
+  
+  Sincerely,
+  Patricia White`,
+    },
+    {
+      id: "8",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Duplicate transaction issue",
+      date: `07-03-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I have an issue with a duplicate transaction on my account. I was billed twice for the same service.
+  
+  Can you please investigate and issue a refund for the duplicate charge? I have included the transaction details.
+  
+  Thank you for your assistance.
+  
+  Best,
+  David Martinez`,
+    },
+    {
+      id: "9",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 9 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Billing error: double charge",
+      date: `07-02-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I discovered a billing error on my account where I was charged twice for the same service. This needs to be corrected.
+  
+  Please review the transactions and process a refund for the duplicate charge. The details are attached for your convenience.
+  
+  Thank you for your prompt attention to this matter.
+  
+  Best regards,
+  Charles Clark`,
+    },
+    {
+      id: "10",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 10 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Duplicate charge complaint",
+      date: `07-01-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I am writing to complain about a duplicate charge on my account. It appears I was billed twice for the same service last month.
+  
+  Could you please look into this and refund the extra charge? The transaction details are provided below.
+  
+  Thank you for your prompt assistance.
+  
+  Sincerely,
+  Anna Hall`,
+    },
+    {
+      id: "11",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 11 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Double charge on my account",
+      date: `06-30-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I have noticed a double charge on my account for the same service. This appears to be an error.
+  
+  Please verify and refund the duplicate charge as soon as possible. I have attached the transaction details for your review.
+  
+  Thank you for your cooperation.
+  
+  Regards,
+  Sophia Lewis`,
+    },
+    {
+      id: "12",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 12 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Duplicate payment issue",
+      date: `06-29-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I am contacting you regarding a duplicate payment issue on my account. My account was charged twice for the same service on the same day.
+  
+  Please investigate this matter and process a refund for the duplicate payment. The transaction details are enclosed for your reference.
+  
+  Thank you for your attention to this matter.
+  
+  Sincerely,
+  James King`,
+    },
+    {
+      id: "13",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 13 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Double billing error",
+      date: `06-28-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I noticed a double billing error on my account. There are two charges for the same service on different dates.
+  
+  Can you please review the charges and issue a refund for the duplicate amount? The transaction details are attached.
+  
+  Thank you for your prompt action.
+  
+  Best,
+  Olivia Walker`,
+    },
+    {
+      id: "14",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 14 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Overcharged for service",
+      date: `06-27-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I have been overcharged for the service this month. There are duplicate charges on my account.
+  
+  Please investigate and refund the extra charge. I have attached the transaction details for your reference.
+  
+  Thank you for your assistance.
+  
+  Best regards,
+  Henry Robinson`,
+    },
+    {
+      id: "15",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 15 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Duplicate payment notice",
+      date: `06-26-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  This is to notify you of a duplicate payment on my account. I have been charged twice for the same service last week.
+  
+  Could you please look into this and process a refund for the duplicate charge? The transaction details are enclosed.
+  
+  Thank you for your prompt attention.
+  
+  Regards,
+  Lucas Scott`,
+    },
+    {
+      id: "16",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 16 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Double charge issue",
+      date: `06-25-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I am experiencing a double charge issue on my account. My account was billed twice for a single service in March.
+  
+  Please investigate this matter and refund the duplicate charge. The transaction details are attached.
+  
+  Thank you for your cooperation.
+  
+  Sincerely,
+  Jessica Turner`,
+    },
+    {
+      id: "17",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 17 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Overpayment refund request",
+      date: `06-24-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I am writing to request a refund for an overpayment on my account. There are duplicate charges for the same service.
+  
+  Please review the transactions and process a refund for the extra charge. The details are attached for your review.
+  
+  Thank you for your assistance.
+  
+  Best regards,
+  Thomas Harris`,
+    },
+    {
+      id: "18",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 18 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Duplicate charge on invoice",
+      date: `06-23-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I found a duplicate charge on my recent invoice. This error resulted in an overpayment on my account.
+  
+  Please investigate and refund the duplicate amount. The transaction details are provided for your reference.
+  
+  Thank you for your prompt action.
+  
+  Best,
+  Matthew Clark`,
+    },
+    {
+      id: "19",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 19 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Double payment error",
+      date: `06-22-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  There seems to be a double payment error on my account. My account was charged twice for the same transaction in April.
+  
+  Please review this matter and issue a refund for the duplicate charge. The transaction details are attached.
+  
+  Thank you for your attention to this matter.
+  
+  Sincerely,
+  Daniel Mitchell`,
+    },
+    {
+      id: "20",
+      uid: "kpopschool",
+      createdAt: new Date(now.getTime() - 20 * 24 * 60 * 60 * 1000),
+      tag: "refund/payment",
+      title: "Incorrect double charge",
+      date: `06-21-2023`,
+      state: "waiting for",
+      details: `Dear Kpopschool,
+  I am contacting you regarding an incorrect double charge on my account. I have been billed twice for the same service in May.
+  
+  Can you please look into this and process a refund for the extra charge? The transaction details are enclosed for your review.
+  
+  Thank you for your prompt attention.
+  
+  Best regards,
+  Ethan Young`,
     },
   ];
   for (const dummyInquiry of dummyInquiries) {

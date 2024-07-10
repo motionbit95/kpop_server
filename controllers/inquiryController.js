@@ -37,6 +37,8 @@ const getInquiry = async (req, res, next) => {
           doc.data().details
         );
 
+        if (doc.data().reply) data.reply = doc.data().reply;
+
         res.send(data);
       }
     })
@@ -64,6 +66,7 @@ const getAllInquiry = async (req, res, next) => {
           doc.data().title,
           doc.data().details
         );
+        if (doc.data().reply) data.reply = doc.data().reply;
         array.push(data);
       });
     }
