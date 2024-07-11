@@ -84,9 +84,9 @@ async function addDummyData(req, res) {
     // await addDummyTeacher();
     // await addDummyFAQ();
     // await addDummyCurriculum();
-    await addDummyInquiry();
+    // await addDummyInquiry();
     // await addDummyUser();
-    // await addDummyReview();
+    await addDummyReview();
     // await addDummyHome();
     res.send("dummy data added successfully.");
   } catch (error) {
