@@ -11,7 +11,12 @@ class User {
     interest,
     experience,
     birthday,
-    gender
+    gender,
+    interestClass,
+    interestTeacher,
+    timezone,
+    frequency,
+    classes
   ) {
     this.id = id;
     this.createdAt = createdAt;
@@ -25,6 +30,11 @@ class User {
     this.experience = experience;
     this.birthday = birthday;
     this.gender = gender;
+    this.interestClass = interestClass;
+    this.interestTeacher = interestTeacher;
+    this.timezone = timezone;
+    this.frequency = frequency;
+    this.classes = classes;
   }
 }
 
